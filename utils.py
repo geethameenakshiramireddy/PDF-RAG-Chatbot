@@ -8,6 +8,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 # from langchain.prompts import PromptTemplate
 # from langchain.chains.question_answering import load_qa_chain
 from langchain_chroma import Chroma
+import streamlit as st
 from dotenv import load_dotenv
 import os
 
@@ -16,7 +17,7 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 if not GOOGLE_API_KEY:
-    raise ValueError("GOOGLE_API_KEY not found. Please check your .env file.")
+    GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key=GOOGLE_API_KEY)
 

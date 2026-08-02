@@ -1,3 +1,0 @@
-# Contains all required libraries.
-
-# Later we'll generate it automatically.
